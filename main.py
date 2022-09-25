@@ -4,12 +4,9 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return 'Hello Worldkk'
 
-@app.route('/test')
+
+
 def get_high_res(url):
  from pytube import YouTube
  yt = YouTube(url)
