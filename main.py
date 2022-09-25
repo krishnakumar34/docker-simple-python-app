@@ -7,18 +7,18 @@ app = Flask(__name__)
 
 
 
-def get_high_res(url):
+@app.route('/')
+def hello():
  from pytube import YouTube
+url = 'https://www.youtube.com/watch?v=yWtWt-e_p24'
+
  yt = YouTube(url)
 
  return yt.streams.get_highest_resolution().url
 
 
-url = 'https://www.youtube.com/watch?v=yWtWt-e_p24'
 
-m3u = get_high_res(url)
-print(m3u)
-return m3u
+
 
 
 @app.errorhandler(500)
